@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva Ingeniería Comercial</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f9f9f9; }
+    .semestre { border: 2px solid #000; padding: 10px; margin-bottom: 20px; width: 300px; display: inline-block; vertical-align: top; margin-right: 10px;}
+    .titulo-semestre { font-weight: bold; font-size: 18px; margin-bottom: 10px; text-align: center; }
+    .ramo {
+      padding: 8px; margin: 5px 0;
+      background-color: #f4a6b0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .ramo.aprobado {
+      background-color: #b19cd9;
+      text-decoration: line-through;
+    }
+    .ramo.bloqueado {
+      background-color: #d3d3d3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Malla Interactiva - Ingeniería Comercial</h1>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 1</div>
+<div class="ramo" data-id="eco1">Fundamentos de Economía</div>
+<div class="ramo" data-id="juego">Juego de Negocios</div>
+<div class="ramo" data-id="org">Gestión de Organizaciones</div>
+<div class="ramo" data-id="mat1">Matemáticas I</div>
+<div class="ramo" data-id="com">Habilidades Comunicativas</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 2</div>
+<div class="ramo bloqueado" data-id="micro1" data-prereq="eco1">Microeconomía I</div>
+<div class="ramo bloqueado" data-id="inf" data-prereq="juego">Aplicaciones Informáticas</div>
+<div class="ramo bloqueado" data-id="cont" data-prereq="org">Contabilidad</div>
+<div class="ramo bloqueado" data-id="mat2" data-prereq="mat1">Matemáticas II</div>
+<div class="ramo bloqueado" data-id="ing1" data-prereq="com">Inglés I</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 3</div>
+<div class="ramo bloqueado" data-id="macro1" data-prereq="micro1">Macroeconomía I</div>
+<div class="ramo bloqueado" data-id="empr1" data-prereq="inf">Taller de Emprendimiento y Creatividad I</div>
+<div class="ramo bloqueado" data-id="contg" data-prereq="cont">Contabilidad Gerencial</div>
+<div class="ramo bloqueado" data-id="mat3" data-prereq="mat2">Matemáticas III</div>
+<div class="ramo bloqueado" data-id="ing2" data-prereq="ing1">Inglés II</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 4</div>
+<div class="ramo bloqueado" data-id="macro2" data-prereq="macro1">Macroeconomía II</div>
+<div class="ramo bloqueado" data-id="dirfin" data-prereq="contg">Dirección Financiera</div>
+<div class="ramo bloqueado" data-id="estad1" data-prereq="mat3">Estadística I</div>
+<div class="ramo bloqueado" data-id="ing3" data-prereq="ing2">Inglés III</div>
+<div class="ramo" data-id="prac1">Práctica I</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 5</div>
+<div class="ramo bloqueado" data-id="micro2" data-prereq="macro2">Microeconomía II</div>
+<div class="ramo bloqueado" data-id="empr2" data-prereq="empr1">Taller de Emprendimiento y Creatividad II</div>
+<div class="ramo bloqueado" data-id="mkt" data-prereq="dirfin">Dirección de Marketing</div>
+<div class="ramo bloqueado" data-id="estad2" data-prereq="estad1">Estadística II</div>
+<div class="ramo bloqueado" data-id="english" data-prereq="ing3">(Business English)</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 6</div>
+<div class="ramo bloqueado" data-id="econo" data-prereq="micro2">Econometría</div>
+<div class="ramo bloqueado" data-id="ops" data-prereq="empr2">Gestión de Operaciones</div>
+<div class="ramo bloqueado" data-id="empresa" data-prereq="mkt">Dirección de Empresas</div>
+<div class="ramo bloqueado" data-id="legal" data-prereq="estad2">Derecho y Empresa</div>
+<div class="ramo bloqueado" data-id="rrhh" data-prereq="english">Gestión de Personas</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 7</div>
+<div class="ramo bloqueado" data-id="digital" data-prereq="ops">Transformación Digital</div>
+<div class="ramo bloqueado" data-id="mktd" data-prereq="empresa">Marketing para la Toma de Decisiones</div>
+<div class="ramo bloqueado" data-id="fin" data-prereq="legal">Finanzas Corporativas</div>
+<div class="ramo bloqueado" data-id="pensar" data-prereq="rrhh">Pensamiento Crítico</div>
+<div class="ramo bloqueado" data-id="taller2" data-prereq="prac1">Taller de Negocios (Integrador II)</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 8</div>
+<div class="ramo bloqueado" data-id="datos" data-prereq="digital">Ciencia de Datos</div>
+<div class="ramo bloqueado" data-id="empr3" data-prereq="empr2">Taller de Emprendimiento y Creatividad III</div>
+<div class="ramo bloqueado" data-id="estrategia" data-prereq="empresa">Dirección Estratégica</div>
+<div class="ramo bloqueado" data-id="sostenible" data-prereq="fin">Negocios Sostenibles</div>
+<div class="ramo bloqueado" data-id="prac2" data-prereq="taller2">Práctica II</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 9</div>
+<div class="ramo bloqueado" data-id="esp1" data-prereq="estrategia">Curso de Especialización I</div>
+<div class="ramo bloqueado" data-id="esp2" data-prereq="estrategia">Curso de Especialización II</div>
+<div class="ramo bloqueado" data-id="esp3" data-prereq="estrategia">Curso de Especialización III</div>
+<div class="ramo bloqueado" data-id="control" data-prereq="sostenible">Control de Gestión</div>
+<div class="ramo bloqueado" data-id="bi" data-prereq="datos">Inteligencia de Negocios</div>
+</div>
+<div class="semestre">
+<div class="titulo-semestre">Semestre 10</div>
+<div class="ramo bloqueado" data-id="esp4" data-prereq="esp1">Curso de Especialización IV</div>
+<div class="ramo bloqueado" data-id="esp5" data-prereq="esp2">Curso de Especialización V</div>
+<div class="ramo bloqueado" data-id="esp6" data-prereq="esp3">Curso de Especialización VI</div>
+<div class="ramo bloqueado" data-id="esp7" data-prereq="esp3">Curso de Especialización VII</div>
+<div class="ramo bloqueado" data-id="titulacion" data-prereq="prac2">Taller de Titulación (Integrador III)</div>
+</div>
+
+<script>
+  const aprobados = new Set();
+
+  document.querySelectorAll('.ramo').forEach(ramo => {
+    if (!ramo.classList.contains('bloqueado')) {
+      ramo.addEventListener('click', () => toggleRamo(ramo));
+    }
+  });
+
+  function toggleRamo(ramo) {
+    ramo.classList.toggle('aprobado');
+    const id = ramo.dataset.id;
+
+    if (ramo.classList.contains('aprobado')) {
+      aprobados.add(id);
+    } else {
+      aprobados.delete(id);
+    }
+
+    desbloquearRamos();
+  }
+
+  function desbloquearRamos() {
+    document.querySelectorAll('.ramo.bloqueado').forEach(ramo => {
+      const prereq = ramo.dataset.prereq;
+      if (aprobados.has(prereq)) {
+        ramo.classList.remove('bloqueado');
+        ramo.addEventListener('click', () => toggleRamo(ramo));
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
